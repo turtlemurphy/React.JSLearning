@@ -1,0 +1,487 @@
+1.
+const JSX = <div></div>;
+
+
+2.
+const JSX = <div>
+  <h1>Paragraph One</h1>
+  <p>Paragraph One</p>
+  <ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+</div>;
+
+3.
+const JSX = (
+  <div>
+    <h1>This is a block of JSX</h1>
+    <p>Here's a subtitle</p>
+  </div>
+);
+
+4.
+const JSX = (
+  <div>
+    {/* This is a comment*/}
+    <h1>This is a block of JSX</h1>
+    <p>Here's a subtitle</p>
+  </div>
+);
+
+5.
+const JSX = (
+  <div id='challenge-node'>
+    <h1>Hello World</h1>
+    <p>Lets render this to the DOM</p>
+  </div>
+);
+// Change code below this line
+ReactDOM.render(JSX, document.getElementById('challenge-node'))
+
+6.
+const JSX = (
+  <div>
+    <h1>Add a class to this div</h1>
+  </div>
+);
+
+7.
+const JSX = (
+  <div className="myDiv">
+    <h1>Add a class to this div</h1>
+  </div>
+);
+
+8.
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br >
+    <p>Be sure to close all tags!</p>
+    <hr >
+  </div>
+);
+
+9.
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br/>
+    <p>Be sure to close all tags!</p>
+    <hr/>
+  </div>
+);
+
+10.
+const MyComponent = function() {
+  // Change code below this line
+  return (
+    <div>"a string of text"</div>
+  );
+  
+  // Change code above this line
+}
+
+11.
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    // Change code below this line
+    return (
+      <div>
+        <h1>Hello React!</h1>
+      </div>
+    );
+    
+
+    // Change code above this line
+  }
+};
+
+12.
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+          <ChildComponent />
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+13.
+const TypesOfFruit = () => {
+  return (
+    <div>
+      <h2>Fruits:</h2>
+      <ul>
+        <li>Apples</li>
+        <li>Blueberries</li>
+        <li>Strawberries</li>
+        <li>Bananas</li>
+      </ul>
+    </div>
+  );
+};
+
+const Fruits = () => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+        <TypesOfFruit />
+      { /* Change code above this line */ }
+    </div>
+  );
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* Change code below this line */ }
+          <Fruits />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+
+14.
+class Fruits extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h2>Fruits:</h2>
+        { /* Change code below this line */ }
+        <NonCitrus /> 	{ /* Provided Behind the scenes */ }
+        <Citrus />		{ /* Provided Behind the scenes */ }
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+     super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* Change code below this line */ }
+        <Fruits />
+        { /* Change code above this line */ }
+        <Vegetables />
+      </div>
+    );
+  }
+};
+
+15.
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        {/* Change code below this line */}
+        <Fruits />
+        <Vegetables />
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+};
+
+// Change code below this line
+ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'))
+
+16.
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>My First React Component!</h1>
+        
+      </div>
+    );
+  }
+};
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'))
+
+17.
+const CurrentDate = (props) => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+      <p>The current date is: {props.date}</p>
+      
+      { /* Change code above this line */ }
+    </div>
+  );
+};
+
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        <CurrentDate date={Date()} />
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+18.
+const List = (props) => {
+  { /* Change code below this line */ }
+  return <p>{props.tasks.join(', ')}</p>
+  { /* Change code above this line */ }
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        { /* Change code below this line */ }
+        <List tasks={["Wake up baby", "Let dogs out", "Feed girls"]} />
+        <h2>Tomorrow</h2>
+        <List tasks={["Apply for jobs", "Code", "Get ready for the gym"]} />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+19.
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+// Change code below this line
+ShoppingCart.defaultProps= { 
+  items: 0 
+}
+
+20.
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+}
+
+Items.defaultProps = {
+  quantity: 0
+}
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    { /* Change code below this line */ }
+    return <Items quantity={ 10 } />
+    { /* Change code above this line */ }
+  }
+};
+
+21.
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+// Change code below this line
+Items.propTypes = { quantity: PropTypes.number.isRequired}
+// Change code above this line
+
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items />
+  }
+};
+
+22.
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <Welcome name={ 'Taylor' }/>
+            { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+          { /* Change code below this line */ }
+          <p>Hello, <strong>{this.props.name}</strong>!</p>
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+23.
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper />
+      </div>
+    );
+  }
+};
+// Change code below this line
+class Camper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {    
+    return (
+      <div>
+        <p>{this.props.name}</p>
+      </div>
+    );
+  }
+};
+
+Camper.propTypes = { name: PropTypes.string.isRequired}
+
+Camper.defaultProps = {
+  name: 'CamperBot'
+};
+
+24.
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    // Only change code below this line
+    this.state = {
+      firstName : 'Taylor'
+    }
+    // Only change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.firstName}</h1>
+      </div>
+    );
+  }
+};
+
+25.
+
+
+26.
+
+
+27.
+
+
+28.
+
+
+29.
+
+
+30.
+
+
+31.
+
+
+32.
+
+
+33.
+
+
+34.
+
+
+35.
+
+
+36.
+
+
+37.
+
+
+38.
+
+
+39.
+
+
+40.
+
